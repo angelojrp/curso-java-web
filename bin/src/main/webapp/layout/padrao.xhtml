@@ -1,0 +1,51 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+ 
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Treinamento Java WEB</title>
+        <style type="text/css">
+.clear-border {
+	border: 0px;
+}
+
+.topo {
+	-webkit-box-shadow: 0px 1px 0px 0px rgba(159, 172, 183, 0.7);
+	-moz-box-shadow: 0px 1px 0px 0px rgba(159, 172, 183, 0.7);
+	box-shadow: 0px 1px 0px 0px rgba(159, 172, 183, 0.7);
+}
+
+body {
+  margin: 0px;
+}
+</style> 
+    </h:head>
+    <h:body>
+            <p:layout fullPage="true" styleClass="clear-border">  
+                <p:layoutUnit position="north" size="115" styleClass="clear-border topo">  
+                    <h:graphicImage url="/images/logo.svg" />
+                </p:layoutUnit>  
+ 
+                <p:layoutUnit position="west" size="220" styleClass="clear-border">  
+                    <ui:insert name="menu">
+                        <h:form>
+                            <p:menu style="width: 195px; border:0px;">
+                                <p:submenu label="Menu">
+                                    <p:menuitem value="Login" icon="ui-icon-key" />
+                                    <p:menuitem value="Fazer meu cadastro" icon="ui-icon-contact" outcome="cadastro" />         
+                                </p:submenu>
+                            </p:menu>
+                        </h:form>
+                    </ui:insert>
+                </p:layoutUnit>  
+                <p:layoutUnit position="center" styleClass="clear-border">  
+                    <ui:insert name="conteudo" />                    
+                </p:layoutUnit>  
+                <p:layoutUnit position="south" gutter="0" footer="Todos os diretos reservados." styleClass="clear-border">  
+                </p:layoutUnit> 
+            </p:layout>  
+    </h:body>
+</html>

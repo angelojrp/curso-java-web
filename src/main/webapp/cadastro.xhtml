@@ -1,11 +1,39 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
-    <ui:decorate template="/layout/padrao.xhtml">
-        <ui:define name="conteudo">
-        	
-            <h:outputText value="#{cadastro.message}"></h:outputText>
-            
-        </ui:define>
-    </ui:decorate>
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core">
+<ui:decorate template="/layout/padrao.xhtml">
+	<ui:define name="conteudo">
+		<h:panelGrid columns="1">
+			<h:form>
+				<h:panelGrid columns="2">
+					<h:outputText value="Titulo"></h:outputText>
+					<p:inputText value="#{cadastro.dto.data}"></p:inputText>
+
+					<h:outputText value="Descrição"></h:outputText>
+					<p:inputTextarea rows="10" cols="50" queryDelay="750"
+						minQueryLength="4" />
+
+					<h:outputText value="CPF" />
+					<p:inputText />
+
+					<p:outputLabel value="Estado:" for="dd" />
+					<p:autoComplete id="dd" dropdown="true" />
+
+				</h:panelGrid>
+				<p:separator style="margin-top:10px" />
+				<h:panelGrid columns="2">
+					<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+						<p:outputLabel for="console" value="Eu sou" />
+						<p:selectOneRadio id="console">
+							<f:selectItem itemLabel="Particular" itemValue="Particular" />
+							<f:selectItem itemLabel="Profissional" itemValue="Profissional" />
+						</p:selectOneRadio>
+					</h:panelGrid>
+				</h:panelGrid>
+			</h:form>
+		</h:panelGrid>
+	</ui:define>
+</ui:decorate>
 </html>
