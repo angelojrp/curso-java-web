@@ -2,16 +2,18 @@ CREATE DATABASE IF NOT EXISTS `curso-java-web`;
 USE `curso-java-web`;
 
 -- TABELAS DE AUTENTICACAO
-CREATE TABLE IF NOT EXISTS `user_roles` (
-  `user_name` varchar(15) NOT NULL,
-  `role_name` varchar(15) NOT NULL,
-  PRIMARY KEY (`user_name`,`role_name`)
+CREATE TABLE IF NOT EXISTS `perfil_usuario` (
+  `email` varchar(15) NOT NULL,
+  `nome_perfil` varchar(15) NOT NULL,
+  PRIMARY KEY (`email`,`nome_perfil`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE IF NOT EXISTS `users` (
-  `user_name` varchar(15) NOT NULL,
-  `user_pass` varchar(100) NOT NULL,
-  PRIMARY KEY (`user_name`)
+CREATE  TABLE IF NOT EXISTS  `usuario` (
+  `email` varchar(100) NOT NULL,
+  `nome` varchar(100) NOT NULL,
+  `telefone` varchar(45) DEFAULT NULL,
+  `senha` varchar(255) NOT NULL,
+  PRIMARY KEY (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- TABELAS DE APOIO

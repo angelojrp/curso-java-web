@@ -9,21 +9,55 @@
         <h:form>
 	        <p:growl id="msg" />
 	        <h:panelGrid columns="2">
-	            <h:outputText value="Titulo:" />
-	            <h:inputText value="#{cadastroController.dto.anuncio.titulo}" maxlength="45" />
-	            <h:outputText value="UF:" />
-	            <p:selectOneMenu value="#{cadastroController.dto.anuncio.uf}">
-	            	<f:selectItems value="#{cadastroController.ufs}" var="uf" itemValue="#{uf.sigla}" itemLabel="#{uf.nome}"></f:selectItems>
-	            </p:selectOneMenu>
 	            <h:outputText value="Categoria:" />
 	            <p:selectOneMenu value="#{cadastroController.dto.anuncio.categoria}" converter="categoriaConverter">
 	            	<f:selectItems value="#{cadastroController.categorias}" var="cat" itemValue="#{cat}" itemLabel="#{cat.nome}"></f:selectItems>
 	            </p:selectOneMenu>
+
+	            <h:outputText value="Titulo:" />
+	            <h:inputText value="#{cadastroController.dto.anuncio.titulo}" maxlength="45" />
 	            <h:outputText value="Descrição:" />
 	            <p:editor value="#{cadastroController.dto.anuncio.descricao}" maxlength="5000" width="600"></p:editor>
+
+	            <h:outputText value="UF:" />
+	            <p:selectOneMenu value="#{cadastroController.dto.anuncio.uf}">
+	            	<f:selectItems value="#{cadastroController.ufs}" var="uf" itemValue="#{uf.sigla}" itemLabel="#{uf.nome}"></f:selectItems>
+	            </p:selectOneMenu>
+				
 	         </h:panelGrid>
 	         
-	         <h:commandButton action="#{cadastroController.salvar}" value="Salvar" type="submit"></h:commandButton>
+	         <p:separator />
+			<h:panelGrid columns="3" id="dadosUsuario" cellpadding="4">
+				<p:outputLabel for="nome" value="Nome:" />
+				<p:inputText id="nome"
+					value="#{cadastroController.dto.usuario.nome}" />
+				<p:message for="nome" />
+				
+				<p:outputLabel for="email" value="E-mail:" />
+				<p:inputText id="email" value="#{cadastroController.dto.usuario.id}" />
+				<p:message for="email" />
+
+				<p:outputLabel for="rEmail" value="Repetir e-mail:" />
+				<p:inputText id="rEmail"
+					value="#{cadastroController.dto.usuario.repetirEmail}" />
+				<p:message for="rEmail" />
+
+				<p:outputLabel for="senha" value="Senha:" />
+				<p:inputText id="senha" type="password" 
+					value="#{cadastroController.dto.usuario.senha}" />
+				<p:message for="senha" />
+				
+				<p:outputLabel for="rSenha" value="Repetir senha:" />
+				<p:inputText id="rSenha" type="password"
+					value="#{cadastroController.dto.usuario.repetirSenha}" />
+				<p:message for="rSenha" />
+
+				<p:outputLabel for="telefone" value="Telefone:" />
+				<p:inputText id="telefone" value="#{cadastroController.dto.usuario.telefone}" />
+				<p:message for="telefone" />
+
+			</h:panelGrid>
+			<h:commandButton action="#{cadastroController.salvar}" value="Salvar" type="submit"></h:commandButton>
          </h:form>
         </ui:define>
     </ui:decorate>
