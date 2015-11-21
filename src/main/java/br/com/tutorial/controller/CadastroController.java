@@ -40,7 +40,7 @@ public class CadastroController implements Serializable {
 	
 	public String salvar(){
 		service.salvarAnuncio(dto);
-		return "index";
+		return "pagamento";
 	}
 	
 }

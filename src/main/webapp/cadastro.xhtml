@@ -9,18 +9,18 @@
         <h:form>
 	        <p:growl id="msg" />
 	        <h:panelGrid columns="2">
-	            <h:outputText value="Categoria:" />
-	            <p:selectOneMenu value="#{cadastroController.dto.anuncio.categoria}" converter="categoriaConverter">
+	            <p:outputLabel for="categoria" value="Categoria:" />
+	            <p:selectOneMenu id="categoria" value="#{cadastroController.dto.anuncio.categoria}" converter="categoriaConverter">
 	            	<f:selectItems value="#{cadastroController.categorias}" var="cat" itemValue="#{cat}" itemLabel="#{cat.nome}"></f:selectItems>
 	            </p:selectOneMenu>
 
-	            <h:outputText value="Titulo:" />
-	            <h:inputText value="#{cadastroController.dto.anuncio.titulo}" maxlength="45" />
-	            <h:outputText value="Descrição:" />
-	            <p:editor value="#{cadastroController.dto.anuncio.descricao}" maxlength="5000" width="600"></p:editor>
+	            <p:outputLabel for="titulo" value="Titulo:" />
+	            <p:inputText id="titulo" value="#{cadastroController.dto.anuncio.titulo}" maxlength="45" />
+	            <p:outputLabel for="descricao"  value="Descrição:" />
+	            <p:editor id="descricao" value="#{cadastroController.dto.anuncio.descricao}" maxlength="5000" width="600"></p:editor>
 
-	            <h:outputText value="UF:" />
-	            <p:selectOneMenu value="#{cadastroController.dto.anuncio.uf}">
+	            <p:outputLabel for="uf"  value="UF:" />
+	            <p:selectOneMenu id="uf" value="#{cadastroController.dto.anuncio.uf}">
 	            	<f:selectItems value="#{cadastroController.ufs}" var="uf" itemValue="#{uf.sigla}" itemLabel="#{uf.nome}"></f:selectItems>
 	            </p:selectOneMenu>
 				
@@ -53,7 +53,7 @@
 				<p:message for="rSenha" />
 
 				<p:outputLabel for="telefone" value="Telefone:" />
-				<p:inputText id="telefone" value="#{cadastroController.dto.usuario.telefone}" />
+				<p:inputMask mask="99 9999-9999" id="telefone" value="#{cadastroController.dto.usuario.telefone}" />
 				<p:message for="telefone" />
 
 			</h:panelGrid>
