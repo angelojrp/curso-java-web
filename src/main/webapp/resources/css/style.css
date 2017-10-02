@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+.clear-border {
+	border: 0px;
+}
+
+.topo {
+	-webkit-box-shadow: 0px 1px 0px 0px rgba(159, 172, 183, 0.7);
+	-moz-box-shadow: 0px 1px 0px 0px rgba(159, 172, 183, 0.7);
+	box-shadow: 0px 1px 0px 0px rgba(159, 172, 183, 0.7);
+}
+
+body {
+  margin: 0px;
+}

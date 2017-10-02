@@ -1,0 +1,60 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:decorate template="/layout/padrao.xhtml">
+	<ui:define name="head">
+		<h:outputStylesheet name="price-page.css" library="css" />
+	</ui:define>
+	<ui:define name="conteudo">
+		
+		<h:form>
+		<div class="plans">
+			<div class="plans">
+				<div class="plan">
+					<h3 class="plan-title">Prata</h3>
+					<p class="plan-price">R$19,00 <span class="plan-unit">mensal</span>
+					</p>
+					<ul class="plan-features">
+						<li class="plan-feature">1 <span class="plan-feature-name">anúncios</span></li>
+						<li class="plan-feature">2 <span class="plan-feature-name">topo semanal</span>
+							<span class="plan-feature-name">sem topo diário</span></li>
+					</ul>
+					<a href="#" class="plan-button">Escolher</a>
+				</div>
+				<div class="plan plan-highlight">
+					<p class="plan-recommended">Recomendado</p>
+					<h3 class="plan-title">Ouro</h3>
+					<p class="plan-price">
+						R$ 49,00 <span class="plan-unit">mensal</span>
+					</p>
+					<ul class="plan-features">
+						<li class="plan-feature">1 <span class="plan-feature-name">anúncios</span></li>
+						<li class="plan-feature">2 <span class="plan-feature-name">topo semanal</span></li>
+						<li class="plan-feature">5 <span class="plan-feature-name">topo diário</span></li>
+					</ul>
+					<a href="#" class="plan-button">Escolher</a>
+				</div>
+				<div class="plan">
+					<h3 class="plan-title">Diamante</h3>
+					<p class="plan-price">
+						R$ 99,00 <span class="plan-unit">mensal</span>
+					</p>
+					<ul class="plan-features">
+						<li class="plan-feature">1 <span class="plan-feature-name">anúncios</span></li>
+						<li class="plan-feature">4 <span class="plan-feature-name">topo semanal</span></li>
+						<li class="plan-feature">15 <span class="plan-feature-name">topo diário</span></li>
+					</ul>
+					<p:commandLink styleClass="plan-button" 
+						id="seleciona-plano" 
+						action="#{pagamentoController.pagar('DIAMANTE')}"> 
+						<h:outputText value="Escolher Plano" />
+					</p:commandLink>
+				</div>
+			</div>
+			</div>
+		</h:form>
+	</ui:define>
+</ui:decorate>
+</html>

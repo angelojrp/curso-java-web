@@ -1,0 +1,20 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:decorate template="/layout/padrao.xhtml">
+	<ui:define name="conteudo">
+		<form method="post" action="j_security_check">
+			<p>
+				<span>Username:</span> <br /> <input type="text" name="j_username" />
+			</p>
+			<p>
+				<span>Password:</span> <br /> <input type="password"
+					name="j_password" />
+			</p>
+			<p>
+				<input type="submit" value="Login" />
+			</p>
+		</form>
+	</ui:define>
+</ui:decorate>
+</html>
